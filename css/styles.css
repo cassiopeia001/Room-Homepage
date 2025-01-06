@@ -234,7 +234,6 @@ body {
   .nav__close-icon {
     background: none;
     border: none;
-    display: block;
   }
   .nav__close-icon:hover, .nav__close-icon:focus {
     cursor: pointer;
