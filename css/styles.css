@@ -228,10 +228,12 @@ body {
     color: hsl(0, 0%, 0%);
     font-size: 1.2rem;
   }
-  .nav__links--visible img {
+  .nav__links--visible button {
     display: block;
   }
-  .nav__close-icon--visible {
+  .nav__close-icon {
+    background: none;
+    border: none;
     display: block;
   }
   .nav__close-icon:hover, .nav__close-icon:focus {
