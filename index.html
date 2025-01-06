@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Room homepage</title>
+  <script defer src="index.js"></script>
+
+</head>
+<body>
+  <nav class="nav">
+    <button class="nav__menu-icon">
+      <img class="nav__menu-icon-img" src="images/icon-hamburger.svg" alt="menu icon">
+    </button>
+    <img class="nav__logo" src="images/logo.svg" alt="logo">
+    <div class="nav__links">
+      <img class="nav__close-icon" src="images/icon-close.svg" alt="icon close">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a href="#">home</a>
+        </li>   
+        <li class="nav__list-item">
+          <a href="#">shop</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="#">about</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="#">contact</a>
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
+  <main class="main">
+    <div class="main__hero-imgs">
+      <picture class="main__hero-image" data-index="1">
+        <source media="(min-width: 800px)" srcset="images/desktop-image-hero-1.jpg">
+        <source media="(max-width: 800px)" srcset="images/mobile-image-hero-1.jpg">
+        <img src="images/desktop-image-hero-1.jpg" alt="fourniture image 1">
+      </picture>
+      <picture class="main__hero-image main__hero-image--hidden" data-index="2">
+        <source media="(min-width: 800px)" srcset="images/desktop-image-hero-2.jpg">
+        <source media="(max-width: 800px)" srcset="images/mobile-image-hero-2.jpg">
+        <img src="images/desktop-image-hero-2.jpg" alt="fourniture image 2">
+      </picture>
+      <picture class="main__hero-image main__hero-image--hidden" data-index="3">
+        <source media="(min-width: 800px)" srcset="images/desktop-image-hero-3.jpg">
+        <source media="(max-width: 800px)" srcset="images/mobile-image-hero-3.jpg">
+        <img src="images/desktop-image-hero-3.jpg" alt="fourniture image 3">
+      </picture>
+      <div class="main__buttons-mobile">
+        <button class="main__previous-button" id="main__next-mobile">
+          <img class="main__previous-button-icon" src="images/icon-angle-left.svg" alt="icon angle left">
+        </button>
+        <button class="main__next-button" id="main__previous-mobile">
+          <img class="main__next-button-icon" src="images/icon-angle-right.svg" alt="icon angle right">
+        </button>
+      </div>
+    </div>
+    <div class="main__products-description" >
+      <div class="main__description" data-index="1">
+        <h1 class="main__title">Discover innovative ways to decorate</h1>
+        <p class="main__text">We provide unmatched quality, comfort, and style for property owners across the country. 
+        Our experts combine form and function in bringing your vision to life. Create a room in your 
+        own style with our collection and make your property a reflection of you and what you love.</p>
+        <button class="main__shop-button">
+          Shop now
+          <img class="main__shop-button-icon" src="images/icon-arrow.svg" alt="arrow image">
+        </button>
+      </div>
+      <div class="main__description main__description--hidden" data-index="2">
+        <h1 class="main__title">We are available all across the globe</h1>
+        <p class="main__text">With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+          Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
+          store locator. Any questions? Don't hesitate to contact us today.</p>
+          <button class="main__shop-button">
+            Shop now
+            <img class="main__shop-button-icon" src="images/icon-arrow.svg" alt="arrow image">
+          </button>
+      </div>
+      <div class="main__description main__description--hidden" data-index="3">
+        <h1 class="main__title">Manufactured with the best materials</h1>
+        <p class="main__text">Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+          to ensure that every product is made as perfect and as consistent as possible. With three decades of 
+          experience in this industry, we understand what customers want for their home and office.</p>
+          <button class="main__shop-button">
+            Shop now
+            <img class="main__shop-button-icon" src="images/icon-arrow.svg" alt="arrow image">
+          </button>
+      </div>
+      <div class="main__buttons">
+        <button class="main__previous-button" id="main__previous">
+          <img class="main__previous-button-icon" src="images/icon-angle-left.svg" alt="icon angle left">
+        </button>
+        <button class="main__next-button" id="main__next">
+          <img class="main__next-button-icon" src="images/icon-angle-right.svg" alt="icon angle right">
+        </button>
+      </div>
+    </div>
+    <div class="main__about-image-dark">
+      <img class="main__about-image" src="images/image-about-dark.jpg" alt="about image dark">
+    </div>
+    <div class="main__about-section">
+      <h2 class="main__about-section-title">About our furniture</h2>
+      <p class="main__about-section-text">Our multifunctional collection blends design and function to suit your individual taste.
+        Make each room unique, or pick a cohesive theme that best express your interests and what
+        inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+        or anything in between. Product specialists are available to help you create your dream space.</p>
+    </div>
+    <div class="main__about-image-light">
+      <img class="main__about-image" src="images/image-about-light.jpg" alt="about image light">
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,268 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  line-height: 1;
+}
+
+:root {
+  font-size: 14px;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+}
+
+.nav {
+  min-width: 20rem;
+  position: absolute;
+  margin: 3rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.nav__links, .nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__list {
+  gap: 2rem;
+}
+.nav__menu-icon, .nav__close-icon {
+  display: none;
+}
+.nav__list-item {
+  list-style: none;
+}
+.nav__list-item a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  position: relative;
+}
+.nav__list-item a:hover::after, .nav__list-item a:focus::after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 2px;
+  left: 25%;
+  top: 20px;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr 2.5fr;
+  grid-template-rows: 2fr 1fr;
+}
+.main__hero-imgs {
+  width: 100%;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+.main__hero-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-out;
+}
+.main__hero-image img {
+  width: 100%;
+  height: 100%;
+}
+.main__hero-image--hidden {
+  display: none;
+  transform: translateX(50%);
+}
+.main__hero-image--visible {
+  display: block;
+}
+.main__products-description {
+  grid-column: 3/5;
+  grid-row: 1/2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main__description {
+  width: 70%;
+  margin-inline: auto;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+.main__title {
+  font-size: 2.7rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: hsl(0, 0%, 0%);
+}
+.main__text {
+  color: hsl(0, 0%, 63%);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+.main__shop-button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-family: inherit;
+  color: hsl(0, 0%, 0%);
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8rem;
+  background: none;
+  border: none;
+}
+.main__shop-button:hover, .main__shop-button:focus {
+  cursor: pointer;
+  opacity: 0.4;
+}
+.main__buttons, .main__buttons-mobile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 28.5%;
+}
+.main__buttons button:hover, .main__buttons-mobile button:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 27%);
+}
+.main__buttons img, .main__buttons-mobile img {
+  width: 0.9rem;
+}
+.main__buttons-mobile {
+  display: none;
+}
+.main__previous-button, .main__next-button {
+  background: hsl(0, 0%, 0%);
+  border: none;
+  width: 50%;
+  aspect-ratio: 1/1;
+}
+.main__description--hidden {
+  display: none;
+}
+.main__description--visible {
+  display: block;
+}
+.main__about-image-dark {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  width: 100%;
+}
+.main__about-section {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  width: 100%;
+  height: 100%;
+  padding: 3.5rem 2.5rem;
+}
+.main__about-section-title {
+  color: hsl(0, 0%, 0%);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.main__about-section-text {
+  color: hsl(0, 0%, 63%);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.main__about-image-light {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  width: 100%;
+}
+.main__about-image {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    z-index: 1;
+    margin: 3rem 1.5rem;
+    justify-content: space-between;
+    width: 50%;
+    min-width: 0;
+  }
+  .nav--menu-opened {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 200;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    align-items: flex-start;
+  }
+  .nav__links {
+    display: none;
+  }
+  .nav__links--visible {
+    display: flex;
+    position: fixed;
+    z-index: 4000;
+    background-color: hsl(0, 0%, 100%);
+    width: 100%;
+    height: 10rem;
+    padding: 2rem;
+    top: 0;
+    left: 0;
+  }
+  .nav__links--visible a {
+    color: hsl(0, 0%, 0%);
+    font-size: 1.2rem;
+  }
+  .nav__links--visible img {
+    display: block;
+  }
+  .nav__close-icon--visible {
+    display: block;
+  }
+  .nav__close-icon:hover, .nav__close-icon:focus {
+    cursor: pointer;
+  }
+  .nav__menu-icon {
+    display: block;
+    background: none;
+    border: none;
+  }
+  .nav__menu-icon:hover, .nav__menu-icon:focus {
+    cursor: pointer;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .main__hero-imgs {
+    position: relative;
+  }
+  .main__description {
+    width: auto;
+    margin: 4rem 2rem;
+  }
+  .main__buttons {
+    display: none;
+  }
+  .main__buttons-mobile {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}/*# sourceMappingURL=styles.css.map */

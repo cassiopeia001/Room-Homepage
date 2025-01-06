@@ -1,0 +1,278 @@
+*,::after,::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+$Dark-Gray: hsl(0, 0%, 63%);
+$Black: hsl(0, 0%, 0%);
+$White: hsl(0, 0%, 100%);
+$Very-Dark-Gray: hsl(0, 0%, 27%);
+
+$font-family-primary: "League Spartan", sans-serif;
+$font-size-primary: 14px;
+$font-size-medium: 1.2rem;
+$font-size-big: 2.7rem;
+
+$weight-regular: 500;
+$weight-medium: 600;
+$weight-bold: 700;
+
+h1{
+    line-height: 1;
+}
+:root{
+    font-size: $font-size-primary;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    font-family: $font-family-primary;
+}
+.nav{
+    min-width: 20rem;
+    position: absolute;
+    margin: 3rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    &__links, &__list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__list{
+        gap: 2rem;
+    }
+    &__menu-icon, &__close-icon{
+        display: none;
+    }
+    &__list-item {
+        list-style: none;
+        a{
+            text-decoration: none;
+            color: $White;
+            font-weight: $weight-medium;
+            position: relative;
+            &:hover::after, &:focus::after{
+                position: absolute;
+                content: "";
+                width: 50%;
+                height: 2px;
+                left: 25%;
+                top: 20px;
+                background-color: $White;  
+            }
+        }
+    }
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2.5fr 2.5fr 1fr 2.5fr;
+    grid-template-rows: 2fr 1fr;
+    &__hero-imgs{
+        width: 100%;
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    &__hero-image{
+        width: 100%;
+        height: 100%;
+        transition: transform 1s ease-out;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__hero-image--hidden{
+        display: none;
+        transform: translateX(50%);
+    }
+    &__hero-image--visible{
+        display: block;
+    }
+    &__products-description{
+        grid-column: 3/5;
+        grid-row: 1/2;   
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__description{
+        width: 70%;
+        margin-inline: auto;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+    }
+    &__title{
+        font-size: $font-size-big;
+        font-weight: $weight-medium;
+        margin-bottom: 1.5rem;
+        color: $Black;
+    }
+    &__text{
+        color: $Dark-Gray;
+        font-weight: $weight-regular;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+    &__shop-button{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-family: inherit;
+        color: $Black;
+        font-weight: $weight-regular;
+        font-size: $font-size-medium;
+        text-transform: uppercase;
+        letter-spacing: 0.8rem;
+        background: none;
+        border: none;
+        &:hover, &:focus{
+            cursor: pointer;
+            opacity: 0.4;
+        }
+    }
+    &__buttons, &__buttons-mobile{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        width: 28.5%;
+        button:hover{
+            cursor: pointer;
+            background-color: $Very-Dark-Gray;
+        }
+        img{
+            width: 0.9rem;
+        }
+    }
+    &__buttons-mobile{
+        display: none;
+    }
+    &__previous-button, &__next-button{
+        background: $Black;
+        border: none;
+        width: 50%;
+        aspect-ratio: 1 / 1;
+    }
+    &__description--hidden{
+        display: none;
+    }
+    &__description--visible{
+        display: block;
+    }
+    &__about-image-dark{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 100%;
+    }
+    &__about-section{
+        grid-column: 2/4;
+        grid-row: 2/3;
+        width: 100%;
+        height: 100%;
+        padding: 3.5rem 2.5rem;
+    }
+    &__about-section-title{
+        color: $Black;
+        text-transform: uppercase;
+        font-size: $font-size-medium;
+        letter-spacing: 0.5rem;
+        font-weight: $weight-bold;
+        margin-bottom: 1rem;
+    }
+    &__about-section-text{
+        color: $Dark-Gray;
+        font-weight: $weight-regular;
+        line-height: 1.5;
+    }
+    &__about-image-light{
+        grid-column: 4/5;
+        grid-row: 2/3;
+        width: 100%;
+    }
+    &__about-image{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 800px) {
+    
+    .nav{
+        z-index: 1;
+        margin: 3rem 1.5rem;
+        justify-content: space-between;
+        width: 50%;
+        min-width: 0;
+        &--menu-opened{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            z-index: 200;
+            background-color: hsla(0, 0%, 0%, 0.5);
+            align-items: flex-start; 
+        }
+        &__links{
+            display: none;
+        }
+        &__links--visible{
+            display: flex;
+            position: fixed;
+            z-index: 4000;
+            background-color: $White;
+            width: 100%;
+            height: 10rem;
+            padding: 2rem;
+            top: 0;
+            left: 0;
+            
+            a{
+                color: $Black;
+                font-size: $font-size-medium;
+            }
+            img{
+                display: block;
+            }
+        }
+        &__close-icon--visible{
+            display: block;
+        }
+        &__close-icon:hover, &__close-icon:focus{
+            cursor: pointer;
+        }
+        &__menu-icon{
+            display: block;
+            background: none;
+            border: none;
+            &:hover, &:focus{
+                cursor: pointer;
+            }
+        }
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        &__hero-imgs{
+            position: relative;
+        }
+        &__description{
+            width: auto;
+            margin: 4rem 2rem;
+        }
+        &__buttons{
+            display: none;
+        }
+        &__buttons-mobile{
+            display: flex;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
